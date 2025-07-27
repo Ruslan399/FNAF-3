@@ -1,4 +1,4 @@
-/* Базовые стили */
+/* === Основные стили === */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -118,6 +118,7 @@ section {
   animation-fill-mode: forwards;
 }
 
+/* === Видео и фанарт === */
 .video-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -141,6 +142,7 @@ section {
   transform-origin: center bottom;
 }
 
+/* === Подвал === */
 footer {
   background-color: #111;
   color: #aaa;
@@ -157,7 +159,7 @@ body.light footer {
   color: #444;
 }
 
-/* Анимации */
+/* === Анимации === */
 @keyframes fadeInUp {
   to { opacity: 1; transform: translateY(0); }
 }
@@ -186,7 +188,7 @@ body.light footer {
   50% { transform: translateY(-15px); }
 }
 
-/* Классы анимации */
+/* === Классы анимации === */
 .fade-in-up { animation: fadeInUp 1s ease forwards; }
 .fade-in-up.delay-1 { animation-delay: 0.3s; }
 .fade-in-up.delay-2 { animation-delay: 0.6s; }
@@ -226,7 +228,7 @@ body.light footer {
 .jump.delay-1 { animation-delay: 1s; }
 .jump.delay-2 { animation-delay: 2s; }
 
-/* === Стили формы регистрации === */
+/* === Форма регистрации === */
 .form {
   background-color: #2c2c2c;
   padding: 25px;
@@ -236,6 +238,7 @@ body.light footer {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
   animation: fadeInUp 1s ease forwards;
 }
+
 body.light .form {
   background-color: #f0f0f0;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -260,10 +263,12 @@ body.light .form {
   color: #fff;
   transition: border-color 0.3s;
 }
+
 .input:focus {
   outline: none;
   border-color: #ffcc00;
 }
+
 body.light .input {
   background-color: #fff;
   color: #000;
@@ -281,11 +286,12 @@ body.light .input {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .submit-btn:hover {
   background-color: #e6b800;
 }
 
-/* === Бургер-меню и мобильный стиль === */
+/* === Бургер-меню и адаптивность === */
 .burger {
   display: none;
   font-size: 28px;
@@ -296,10 +302,15 @@ body.light .input {
   right: 20px;
   z-index: 1001;
 }
-body.light .burger { color: #000; }
+
+body.light .burger {
+  color: #000;
+}
 
 @media (max-width: 768px) {
-  .burger { display: block; }
+  .burger {
+    display: block;
+  }
 
   nav {
     display: none;
@@ -310,9 +321,14 @@ body.light .burger { color: #000; }
     width: 100%;
     padding: 10px 0;
   }
-  nav.active { display: block; }
 
-  body.light nav { background: #eee; }
+  nav.active {
+    display: block;
+  }
+
+  body.light nav {
+    background: #eee;
+  }
 
   nav ul {
     flex-direction: column;
@@ -330,7 +346,25 @@ body.light .burger { color: #000; }
 }
 
 @media (max-width: 480px) {
-  h1 { font-size: 24px; }
-  .theme-toggle img { width: 36px; height: 36px; }
-  section { padding: 40px 10px; }
+  .top-bar h1 {
+    font-size: 20px;
+  }
+
+  .theme-toggle img {
+    width: 36px;
+    height: 36px;
+  }
+
+  section {
+    padding: 40px 10px;
+  }
+
+  .gallery img {
+    width: 90vw;
+  }
+
+  .video-wrapper iframe {
+    width: 90vw !important;
+    height: auto !important;
+  }
 }
